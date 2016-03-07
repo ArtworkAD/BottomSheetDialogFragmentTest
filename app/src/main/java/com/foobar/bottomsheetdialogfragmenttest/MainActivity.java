@@ -1,6 +1,7 @@
 package com.foobar.bottomsheetdialogfragmenttest;
 
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -17,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
                 (new MyBottomSheetDialogFragment()).show(getSupportFragmentManager(), "TAG");
             }
         });
+
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 }
